@@ -4,6 +4,8 @@ An academic proof of concept combining **n8n, Groq/Llama, JavaScript and Supabas
 
 The workflow analyzes text; the dashboard explores saved classifications. The public demo uses fictional records and makes no model calls.
 
+**[Open the public dashboard](https://abeggg.github.io/AI-Powered-Phishing-Detection/)** · synthetic data, no credentials required.
+
 ![Dashboard running locally with synthetic data](assets/dashboard-overview.jpg)
 
 ## 1. Project Overview
@@ -122,6 +124,7 @@ During portfolio preparation on 2026-11-10:
 | Browser search/filter/sort/details | Checked with actual controls |
 | Local CSV import | Five-row supplied fixture and three-row adversarial fixture worked |
 | Hostile HTML and malformed CSV | Rendered as text; malformed input rejected while retaining previous data |
+| GitHub Pages demo | Deployed successfully; public search, error filter, sorting, details and local CSV import checked |
 | Revised n8n runtime import, Groq inference, Supabase inserts | Not executed; no configured test instance or credentials used |
 
 See [validation scope](docs/VALIDATION.md) and [differences from the report](docs/REPORT_COMPARISON.md). Offline tests emulate Code-node inputs; they do not replace an n8n runtime import or an end-to-end integration test.

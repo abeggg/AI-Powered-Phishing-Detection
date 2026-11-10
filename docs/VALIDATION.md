@@ -25,3 +25,9 @@ The tests execute the actual editable Code-node sources with controlled `$input`
 ## Not verified
 
 No n8n runtime import, live Groq response, Supabase insert or external public Sheets feed was tested during preparation. No detection-accuracy or business-impact benchmark was produced. GitHub checks and Pages deployment are separate publication-stage validations; their actual run status is available in the repository's Actions tab.
+
+## Publication verification
+
+On 2026-11-10, the [project checks](https://github.com/abeggg/AI-Powered-Phishing-Detection/actions/runs/42872091833) and [Pages deployment](https://github.com/abeggg/AI-Powered-Phishing-Detection/actions/runs/42872254553) succeeded. The [public dashboard](https://abeggg.github.io/AI-Powered-Phishing-Detection/) loaded twelve synthetic records. Search, filtering the unscored analysis error, ascending score order, message details and five-row local CSV import were exercised on the hosted site. No browser console errors were observed. The default demo was restored after verification.
+
+This confirms static deployment and interface behavior, not a live n8n/Groq/Supabase integration or detection effectiveness.
