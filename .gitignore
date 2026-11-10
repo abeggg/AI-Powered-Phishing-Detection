@@ -1,0 +1,30 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*.json
+*secrets*.json
+
+# Raw datasets, personal information, local exports
+data/private/
+data/raw/
+Phishing_2.csv
+DETECTOR DE PHISHING.json
+
+# OS, temp and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+__pycache__/
+*.log
+
+# Historical private review material and local tooling
+docs/academic_report_original.pdf
+assets/historical/
+.codex/
+node_modules/
+coverage/
+*.zip

@@ -1,0 +1,9 @@
+Email Text,Email Type
+"Olá, a reunião foi confirmada para amanhã às 10h. Obrigado.",Legitimate
+"Olá, seu relatório mensal está disponível no portal interno.",Legitimate
+Sua conta será BLOQUEADA HOJE. Envie imediatamente sua senha e código de verificação.,Phishing
+URGENTE: confirme os dados do seu cartão para evitar a suspensão da conta.,Phishing
+Nossa equipe enviará uma atualização sobre o cronograma na sexta-feira.,Legitimate
+Você ganhou um prêmio inesperado! Informe seu CPF e dados bancários para retirar.,Phishing
+Confira a documentação do projeto em https://example.org/docs.,Legitimate
+Seu fornecedor alterou os dados bancários. Faça uma transferência urgente sem consultar ninguém.,Phishing

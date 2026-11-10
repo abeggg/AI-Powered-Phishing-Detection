@@ -1,0 +1,6 @@
+Mensagem,Score,Classificacao,Motivos,Timestamp,Confiabilidade
+Sua conta será bloqueada. Informe sua senha e código imediatamente.,92,ALTO RISCO,Urgência; solicitação de credenciais,2026-05-13 09:12,96
+"Promoção limitada, aproveite o desconto hoje.",52,MEDIO RISCO,Linguagem comercial insistente,2026-05-13 09:14,82
+"Olá, confirmamos a reunião de amanhã às 10h.",12,BAIXO RISCO,Sem sinais fortes de fraude,2026-05-13 09:18,91
+Pagamento urgente em conta nova; não confirme com o fornecedor.,89,ALTO RISCO,Alteração bancária; urgência,2026-05-13 09:19,88
+Segue a atualização do cronograma para revisão.,9,BAIXO RISCO,Mensagem informativa,2026-05-13 09:21,85

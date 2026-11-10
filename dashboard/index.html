@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore a phishing-analysis proof of concept with synthetic records, local CSV import, and explicit analysis-error handling.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://docs.google.com https://*.googleusercontent.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Phishing Analysis · Review workspace</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="config.js"></script>
+  <script defer src="core.js"></script>
+  <script defer src="demo-data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#main"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 3 6v6c0 5 9 10 9 10s9-5 9-10V6Z"/><path d="m8 12 3 3 5-6"/></svg> Phishing Analysis</a><span class="edition">ACADEMIC PROOF OF CONCEPT</span></header>
+  <main id="main">
+    <section class="intro">
+      <div><p class="eyebrow">MESSAGE REVIEW WORKSPACE</p><h1>A clearer view of message risk.</h1><p class="lead">Explore classifications, inspect the signals, and keep failed analyses visible.</p></div>
+      <span class="source" id="source">Synthetic demo</span>
+    </section>
+    <section class="source-bar" aria-label="Data source controls">
+      <p id="status" role="status">Loading synthetic records…</p>
+      <div class="buttons"><button id="load-demo" type="button">Load demo</button><button id="import-csv" type="button" class="primary">Import CSV</button><button id="refresh-sheet" type="button" disabled title="No public feed configured">Refresh sheet</button><input id="csv-file" class="file-input" type="file" accept=".csv,text/csv" aria-label="Select a CSV file"></div>
+    </section>
+    <p class="alert" id="notice" role="alert" hidden></p>
+    <section class="metrics" aria-label="All loaded records">
+      <article class="metric"><span>Loaded records</span><strong id="total">0</strong><small>All imported messages</small></article>
+      <article class="metric"><span><i class="dot high"></i>High risk</span><strong id="high">0</strong><small>Scores 71–100</small></article>
+      <article class="metric"><span><i class="dot medium"></i>Medium risk</span><strong id="medium">0</strong><small>Scores 40–70</small></article>
+      <article class="metric"><span><i class="dot low"></i>Low risk</span><strong id="low">0</strong><small>Scores 0–39</small></article>
+      <article class="metric error-metric"><span><i class="dot error"></i>Analysis errors</span><strong id="error">0</strong><small>Unscored · review required</small></article>
+    </section>
+    <section class="overview">
+      <article class="panel distribution"><div class="section-heading"><div><h2>Risk distribution</h2><p>All loaded records, including analysis errors.</p></div><span class="subtle">OVERVIEW</span></div>
+        <div id="distribution"></div>
+        <div class="averages"><div><span>Average score</span><strong id="average">—</strong><small>Successful analyses only</small></div><div><span>Model confidence</span><strong id="confidence">—</strong><small>Self-reported, not calibrated</small></div></div>
+      </article>
+      <article class="panel"><div class="section-heading"><div><h2>Highest scoring messages</h2><p>Open a record to inspect its explanation.</p></div></div><div id="priority"></div></article>
+    </section>
+    <section class="panel history" aria-labelledby="history-title">
+      <div class="section-heading"><div><h2 id="history-title">Analysis history</h2><p id="result-count">All records</p></div><span class="subtle">MESSAGES ARE NEVER OPENED AS LINKS</span></div>
+      <div class="filters"><label class="search-label">Search<input id="search" type="search" placeholder="Search messages or reasons" autocomplete="off"></label><label>Risk level<select id="risk-filter"><option value="all">All risk levels</option><option value="high">High risk</option><option value="medium">Medium risk</option><option value="low">Low risk</option><option value="error">Analysis errors</option></select></label><label>Sort by<select id="sort"><option value="risk-desc">Highest score</option><option value="risk-asc">Lowest score</option><option value="newest">Most recent</option></select></label></div>
+      <div class="table-scroll"><table><thead><tr><th scope="col">Classification</th><th scope="col">Score</th><th scope="col">Message</th><th scope="col">Analyzed</th><th scope="col"><span class="sr-only">Details</span></th></tr></thead><tbody id="records"></tbody></table></div>
+      <p id="empty" class="empty" hidden>No records match your filters. Try another search or risk level.</p>
+      <div class="pagination"><span id="page-label"></span><div class="buttons"><button id="previous" type="button">Previous</button><button id="next" type="button">Next</button></div></div>
+    </section>
+    <footer><p><strong>Designed for human review.</strong> Scores are triage signals, not guarantees that a message is safe.</p><p id="demo-note">Demo classifications are illustrative; no model is called by this page.</p></footer>
+  </main>
+  <dialog id="details" aria-labelledby="details-title"><div class="dialog-heading"><h2 id="details-title">Message details</h2><button id="close-details" type="button">Close</button></div><div id="details-body"></div></dialog>
+</body>
+</html>
